@@ -1,0 +1,52 @@
+Mexico - published guidance for the officials who decide migration, visa and refugee cases
+Checked 2026-11-15. Script: ../download_mx.py (re-run: python3 download_mx.py from the folder above;
+python3 download_mx.py --index rebuilds index.tsv and not-obtained.tsv from disk without network).
+
+Result in one paragraph
+Mexico's working rules for migration officers are almost all legal instruments published in
+the Diario Oficial de la Federación (DOF) by the Interior Ministry (SEGOB): above all the
+Lineamientos para trámites y procedimientos migratorios (2012, amended to 2019), which are
+in practice the INM's procedures manual for every residence, visitor and regularisation
+application, and the Lineamientos Generales para la expedición de visas (2014, replaced
+2025, amended 2026), plus the circular on migration documents and forms, the rules for
+migration stations, the guidelines on migrant protection, delegation agreements and the
+visa-requirement agreements. These are marked "procedural act". True guidance addressed to
+officers is thin: a handful of INM protocols (immigration checks, mass flows, COVID-19),
+COMAR's procedures manual (2018) and operating guide for child applicants (2022), the
+2016 protocol for unaccompanied children, the SIPINNA protection route for migrant children,
+three circulars instructing INM staff (child migrants 2010, victims of crime 2011) and,
+historically, the INM Manual de Trámites Migratorios (2000) and Manual de Criterios y
+Trámites Migratorios (2010). The INM's internal procedure manuals (control and verification,
+migration stations, regulation) and COMAR's eligibility criteria are not published.
+
+What was saved: see the summary at the end of this file (counts by kind).
+
+Sources used
+- https://portales.segob.gob.mx/es/PoliticaMigratoria/Nnacional - the Unidad de Política
+  Migratoria's "Compendio jurídico migratorio" (Marco nacional; reached from
+  /es/PoliticaMigratoria/Normateca). Sections 4 (disposiciones complementarias) and 7
+  (documentos históricos) are read. Consolidated PDFs kept by the UPM -> upm/ (Lineamientos
+  para trámites y procedimientos migratorios, consolidated to DOF 30-12-2019; circular on
+  documents and forms to 04-02-2021; stamp guidelines to 28-11-2022; ...). Every DOF note the
+  compendium links to is taken from SEGOB's own DOF system -> dof/. Left out as off topic:
+  Mexican passports, legalisations, household goods, welfare programmes, councils, staff
+  vetting, uniforms, office addresses. The listing is cached in listings/.
+- https://sidof.segob.gob.mx (SEGOB's DOF service; robots.txt allows /notas/getDoc/ except
+  for a list of withdrawn notes, which the script honours): DOF notes as Word files, and the
+  daily indexes used to find instruments the compendium does not link (EXTRA_DOF in the
+  script; days 2010-01 to 2026-11 were scanned for migration-related titles).
+- https://www.gob.mx/inm and https://www.gob.mx/comar "documentos" (360 and 396 entries
+  read): INM protocols and COMAR manuals -> inm/, comar/; SIPINNA route -> otros/.
+- web.archive.org: pre-2012 texts of the INM's old website -> historico/; the 2016 UNHCR /
+  COMAR / UNICEF initial-assessment protocol for children (acnur.org refuses scripts).
+
+Not used (refusals, robots)
+- dof.gob.mx: robots.txt disallows /nota_detalle.php? and /nota_to_doc.php? for all agents;
+  notes were taken from sidof.segob.gob.mx instead. www.dof.gob.mx timed out.
+- www.inm.gob.mx: answers scripts with a WAF "URL blocked" page, also for robots.txt.
+- sre.gob.mx: redirects scripts to a bot-manager check (validate.perfdrive.com). The
+  Wayback Machine lists about 1,090 files of the SRE Normateca Interna (2011-2023); none is a
+  visa manual (the 2004 consular-documentation manual covers passports, consular ID and
+  notarial acts), so the consular visa guide appears to be internal.
+- acnur.org: HTTP 403.
+Details in not-obtained.tsv.
